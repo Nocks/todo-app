@@ -19,37 +19,47 @@
     <div class="app">
       <div class="app__header">
         <h1 class="app__name">Todo</h1>
-        <span class="app__theme-changer"><img src="images/icon-moon.svg" alt="theme toggler"></span>
+        <span class="app__theme-changer"><img src="images/icon-sun.svg" alt="theme toggler"></span>
       </div>
       <div class="app__input-wrapper">
         <span class="app__input-ring"></span>
-        <input type="text" name="" value="">
+        <input class="app__input-box" type="text" placeholder="Create a new todo..." value="">
       </div>
       <div class="app__main-wrapper">
         <div class="app__list-container">
           <div class="app__list-item-wrapper">
-            <span class="app__complete-toggler"></span>
+            <span class="app__complete-toggler app__input-ring"></span>
             <span class="app__todo-item">Task to do 1</span>
-            <span class="app__delete-item"></span>
+            <span class="app__delete-item"><img src="images/icon-cross.svg" alt="delete entry item"></span>
           </div>
           <div class="app__list-item-wrapper">
-            <span class="app__complete-toggler"></span>
+            <span class="app__complete-toggler app__input-ring"></span>
             <span class="app__todo-item">Task to do 2</span>
-            <span class="app__delete-item"></span>
+            <span class="app__delete-item"><img src="images/icon-cross.svg" alt="delete entry item"></span>
           </div>
           <div class="app__list-item-wrapper">
-            <span class="app__complete-toggler"></span>
+            <span class="app__complete-toggler app__input-ring"></span>
             <span class="app__todo-item">Task to do 3</span>
-            <span class="app__delete-item"></span>
+            <span class="app__delete-item"><img src="images/icon-cross.svg" alt="delete entry item"></span>
+          </div>
+          <div class="app__list-item-wrapper">
+            <span class="app__complete-toggler app__input-ring"></span>
+            <span class="app__todo-item">Task to do 4</span>
+            <span class="app__delete-item"><img src="images/icon-cross.svg" alt="delete entry item"></span>
           </div>
         </div>
-        <div class="app__menu">
+        <div class="app__menu app__menu--primary">
           <span class="app__items-left">5 items left</span>
           <span class="app__all-list">All</span>
           <span class="app__active">Active</span>
-          <span class="app__completed"></span>
+          <span class="app__completed">Completed</span>
           <span class="app__clear-completed">Clear Completed</span>
         </div>
+      </div>
+      <div class="app__menu app__menu--secondary">
+        <span class="app__all-list">All</span>
+        <span class="app__active">Active</span>
+        <span class="app__completed">Completed</span>
       </div>
     </div>
   </div>

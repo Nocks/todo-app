@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 *,
 ::before,
 ::after {
@@ -15,6 +19,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.125em;
   line-height: 1.5em;
+  background-color: #161722;
 }
 
 body * + * {
@@ -41,6 +46,157 @@ a:active, a:focus {
 button:focus,
 input:focus {
   outline: none;
+}
+
+.header {
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-size: cover;
+  height: 300px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  position: relative;
+  top: -190px;
+  padding: 1em;
+}
+
+.app {
+  width: 50%;
+}
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app__name {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: white;
+}
+.app__theme-changer {
+  margin-top: 0;
+}
+.app__input-wrapper {
+  background-color: #25273c;
+  padding: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+}
+.app__main-wrapper {
+  border-radius: 8px;
+  margin-top: 1em;
+  -webkit-box-shadow: 1px 10px 15px 3px #161722;
+  -moz-box-shadow: 1px 10px 15px 3px #161722;
+  box-shadow: 1px 10px 15px 3px #161722;
+}
+.app__input-ring {
+  display: block;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #393a4c;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.app__input-box {
+  margin-top: 0;
+  background-color: #25273c;
+  border: unset;
+  color: #cacde8;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+.app__input-box::placeholder {
+  color: #777a92;
+}
+.app__list-item-wrapper {
+  background-color: #25273c;
+  padding: 0.8em;
+  margin: 0;
+  border-bottom: 1px solid #393a4c;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.app__list-item-wrapper:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.app__complete-toggler.completed {
+  background-image: url("../images/icon-check.svg"), linear-gradient(#57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.app__todo-item {
+  margin-top: 0;
+  color: #cacde8;
+}
+.app__todo-item.completed {
+  text-decoration: line-through;
+  color: #777a92;
+}
+.app__delete-item {
+  height: 26px;
+  width: 26px;
+  margin-top: 0;
+  position: absolute;
+  right: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app__menu {
+  background-color: #25273c;
+  padding: 0.8em;
+  font-size: 15px;
+  color: #777a92;
+}
+.app__menu--primary {
+  margin-top: 0;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.app__menu--primary .app__all-list, .app__menu--primary .app__active, .app__menu--primary .app__completed {
+  display: none;
+}
+.app__menu--primary .app__clear-completed {
+  margin-top: 0;
+}
+.app__menu--secondary {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  -webkit-box-shadow: 1px 10px 15px 3px #161722;
+  -moz-box-shadow: 1px 10px 15px 3px #161722;
+  box-shadow: 1px 10px 15px 3px #161722;
+}
+.app__menu--secondary .app__active, .app__menu--secondary .app__completed {
+  margin-top: 0;
+  margin-left: 1em;
+}
+
+footer {
+  margin-top: 1.5em;
+  margin-bottom: 10em;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 0.8em;
+}
+footer .attribution span {
+  display: block;
+}
+footer .attribution span + span {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
