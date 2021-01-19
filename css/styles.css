@@ -64,9 +64,6 @@ input:focus {
   padding: 1em;
 }
 
-.app {
-  width: 50%;
-}
 .app__header {
   display: flex;
   justify-content: space-between;
@@ -181,6 +178,12 @@ input:focus {
 .app__menu--secondary .app__active, .app__menu--secondary .app__completed {
   margin-top: 0;
   margin-left: 1em;
+}
+.app__menu--secondary .app__all-list, .app__menu--secondary .app__active, .app__menu--secondary .app__completed {
+  font-weight: 700;
+}
+.app__menu--secondary .app__all-list.active, .app__menu--secondary .app__active.active, .app__menu--secondary .app__completed.active {
+  color: #3a7bfd;
 }
 
 footer {

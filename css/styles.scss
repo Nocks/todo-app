@@ -91,7 +91,7 @@ input:focus {
 }
 
 .app {
-  width: 50%;
+  // width: 50%;
 
   &__header {
     display: flex;
@@ -227,6 +227,18 @@ input:focus {
     & .app__active, & .app__completed {
       margin-top: 0;
       margin-left: 1em;
+    }
+
+    & .app__all-list,
+    & .app__active,
+    & .app__completed {
+      font-weight: 700;
+    }
+
+    & .app__all-list.active,
+    & .app__active.active,
+    & .app__completed.active {
+      color: $color-bright-blue;
     }
   }
 }
