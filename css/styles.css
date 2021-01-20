@@ -64,6 +64,9 @@ input:focus {
   padding: 1em;
 }
 
+.app {
+  width: 50%;
+}
 .app__header {
   display: flex;
   justify-content: space-between;
@@ -77,6 +80,9 @@ input:focus {
 }
 .app__theme-changer {
   margin-top: 0;
+}
+.app__theme-changer:hover {
+  cursor: pointer;
 }
 .app__input-wrapper {
   background-color: #25273c;
@@ -129,9 +135,13 @@ input:focus {
   background-repeat: no-repeat;
   background-position: center;
 }
+.app__complete-toggler:hover {
+  cursor: pointer;
+}
 .app__todo-item {
   margin-top: 0;
   color: #cacde8;
+  cursor: pointer;
 }
 .app__todo-item.completed {
   text-decoration: line-through;
@@ -161,8 +171,21 @@ input:focus {
   display: flex;
   justify-content: space-between;
 }
-.app__menu--primary .app__all-list, .app__menu--primary .app__active, .app__menu--primary .app__completed {
+.app__menu--primary .app__menu__middle-wraper {
+  margin-top: 0;
   display: none;
+}
+.app__menu--primary .app__menu__middle-wraper .app__all-list, .app__menu--primary .app__menu__middle-wraper .app__active, .app__menu--primary .app__menu__middle-wraper .app__completed {
+  margin-top: 0;
+}
+.app__menu--primary .app__menu__middle-wraper .app__active, .app__menu--primary .app__menu__middle-wraper .app__completed {
+  margin-top: 0;
+  margin-left: 1em;
+}
+.app__menu--primary .app__all-list:hover, .app__menu--primary .app__active:hover, .app__menu--primary .app__completed:hover, .app__menu--primary .app__clear-completed:hover {
+  cursor: pointer;
+  font-weight: bold;
+  color: #e4e5f1;
 }
 .app__menu--primary .app__clear-completed {
   margin-top: 0;
