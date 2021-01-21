@@ -175,6 +175,13 @@ input:focus {
 
   &__complete-toggler:hover {
     cursor: pointer;
+    /* You cannot use border-radius with gradient
+    The following solution was achieved from the link below:
+    https://stackoverflow.com/questions/51496204/border-gradient-with-border-radius */
+    background:
+     linear-gradient(#25273c, #25273c) padding-box,
+     linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    border: 1px solid transparent;
   }
 
   &__todo-item {
