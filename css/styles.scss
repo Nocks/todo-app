@@ -91,7 +91,6 @@ input:focus {
 }
 
 .app {
-  width: 50%;
 
   &__header {
     display: flex;
@@ -121,6 +120,10 @@ input:focus {
     align-items: center;
     justify-content: flex-start;
     border-radius: 8px;
+
+    & .app__input-box {
+      width: 90%;
+    }
   }
 
   &__main-wrapper {
@@ -305,4 +308,21 @@ footer {
   .attribution span + span {
      margin-top: 0;
   }
+}
+
+// Temp media query
+@media (min-width: 800px) {
+  .app {
+    width: 50%;
+
+    &__menu--primary {
+
+      & .app__menu__middle-wraper {
+        display: block;
+      }
+  }
+  &__menu--secondary {
+    display: none;
+  }
+}
 }

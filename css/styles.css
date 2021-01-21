@@ -64,9 +64,6 @@ input:focus {
   padding: 1em;
 }
 
-.app {
-  width: 50%;
-}
 .app__header {
   display: flex;
   justify-content: space-between;
@@ -91,6 +88,9 @@ input:focus {
   align-items: center;
   justify-content: flex-start;
   border-radius: 8px;
+}
+.app__input-wrapper .app__input-box {
+  width: 90%;
 }
 .app__main-wrapper {
   border-radius: 8px;
@@ -228,6 +228,18 @@ footer .attribution span {
 }
 footer .attribution span + span {
   margin-top: 0;
+}
+
+@media (min-width: 800px) {
+  .app {
+    width: 50%;
+  }
+  .app__menu--primary .app__menu__middle-wraper {
+    display: block;
+  }
+  .app__menu--secondary {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
