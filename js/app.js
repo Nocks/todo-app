@@ -15,20 +15,24 @@ let prepareUserInput = () => {
   todoItemSpan.textContent = todoInput;
 };
 
-let countItemsLeft = () => {
+let countActiveItemsLeft = () => {
   let activeTodo = document.querySelectorAll('.active-todo');
   return activeTodo.length;
 };
 
 let updateItemsLeftCount = () => {
-  const itemsLeft = document.querySelector(".app__items-left");
-  const itemsLeftCount = countItemsLeft();
-  if (itemsLeftCount === 0) {
-    itemsLeft.textContent = 'No items yet';
-  } else if (itemsLeftCount === 1) {
-    itemsLeft.textContent = `${itemsLeftCount} item left`;
-  } else if (itemsLeftCount > 1) {
-    itemsLeft.textContent = `${itemsLeftCount} items left`;
+  const itemsLeftWrapper = document.querySelector(".app__items-left");
+  const availableItems = document.querySelector(".app__list-item-wrapper");
+  const activeItemsLeftCount = countActiveItemsLeft();
+
+  if (availableItems === null && activeItemsLeftCount === 0) {
+    itemsLeftWrapper.textContent = 'No items yet';
+  } else if (activeItemsLeftCount === 0) {
+    itemsLeftWrapper.textContent = `No item left`;
+  } else if (activeItemsLeftCount === 1) {
+    itemsLeftWrapper.textContent = `${activeItemsLeftCount} item left`;
+  } else if (activeItemsLeftCount > 1) {
+    itemsLeftWrapper.textContent = `${activeItemsLeftCount} items left`;
   }
 };
 
@@ -65,13 +69,3 @@ todoInputBox.addEventListener('keypress', (event) => {
     };
   };
 });
-
-// const listItemWrapper = document.querySelector('app__list-item-wrapper');
-
-// document.querySelector('app__list-item-wrapper').addEventListener('click', (event) => {
-//   console.log(event.target);
-// })
-//
-// document.querySelector('app__list-item-wrapper').addEventListener('click', (event) => {
-//   console.log(event.target);
-// })
