@@ -3,7 +3,7 @@ let todoListContainer = document.querySelector('.app__list-container');
 let listItemWrapper = document.createElement('div');
 let todoInput = '';
 
-const prepareUserInput = () => {
+let prepareUserInput = () => {
   // generate listItemWrapper HTML
   listItemWrapper.classList.add('app__list-item-wrapper');
   listItemWrapper.innerHTML = `<span class="app__complete-toggler app__input-ring"></span>`;
