@@ -3,7 +3,7 @@ let todoListContainer = document.querySelector('.app__list-container');
 let listItemWrapper = document.createElement('div');
 let todoInput = '';
 
-function prepareUserInput() {
+const prepareUserInput = () => {
   // generate listItemWrapper HTML
   listItemWrapper.classList.add('app__list-item-wrapper');
   listItemWrapper.innerHTML = `<span class="app__complete-toggler app__input-ring"></span>`;
@@ -25,10 +25,7 @@ todoInputBox.addEventListener('keypress', (event) => {
     // Insert user todo input into premade HTML object
     prepareUserInput();
     // Append the prepared user input to the todoListContainer
-    todoListContainer.appendChild(listItemWrapper);
-    // todoListContainer.innerHTML += listItemWrapper.innerHTML;
-
-    // Just for testing
-    console.log(todoListContainer);
+    let clonedItem = listItemWrapper.cloneNode(true)
+    todoListContainer.appendChild(clonedItem);
   }
 });
