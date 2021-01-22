@@ -130,7 +130,7 @@ input:focus {
 .app__list-item-wrapper:first-child {
   border-radius: 8px 8px 0 0;
 }
-.app__complete-toggler.completed {
+.app__complete-toggler.completed, .app__complete-toggler.completed:hover {
   background-image: url("../images/icon-check.svg"), linear-gradient(#57ddff, #c058f3);
   background-repeat: no-repeat;
   background-position: center;

@@ -170,7 +170,8 @@ input:focus {
     border-radius: 8px 8px 0 0;
   }
 
-  &__complete-toggler.completed {
+  &__complete-toggler.completed,
+  &__complete-toggler.completed:hover {
     background-image: url('../images/icon-check.svg'), $color-check-background;
     background-repeat: no-repeat;
     background-position: center;

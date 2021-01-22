@@ -37,7 +37,7 @@ window.addEventListener('load', (event) => {
 });
 
 todoInputBox.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' &&  todoInputBox.value !== '') {
     // Capture user todo input
     todoInput = todoInputBox.value;
     // Clear the input box
@@ -49,5 +49,29 @@ todoInputBox.addEventListener('keypress', (event) => {
     todoListContainer.appendChild(clonedItem);
     // update the count of todo items that are active
     updateItemsLeftCount();
-  }
+
+    // Only add once, an event listener to todoListContainer on first todo item
+    if (todoListContainer.childElementCount === 1) {
+      todoListContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('app__input-ring')) {
+          event.target.classList.toggle('completed');
+          const todoItemTextWrapper = event.target.parentNode.querySelector('.app__todo-item');
+          todoItemTextWrapper.classList.toggle('completed');
+          event.target.parentNode.classList.toggle('active-todo');
+          event.target.parentNode.classList.toggle('completed-todo');
+          updateItemsLeftCount();
+        };
+      });
+    };
+  };
 });
+
+// const listItemWrapper = document.querySelector('app__list-item-wrapper');
+
+// document.querySelector('app__list-item-wrapper').addEventListener('click', (event) => {
+//   console.log(event.target);
+// })
+//
+// document.querySelector('app__list-item-wrapper').addEventListener('click', (event) => {
+//   console.log(event.target);
+// })
