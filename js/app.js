@@ -36,11 +36,9 @@ let updateItemsLeftCount = () => {
   }
 };
 
-window.addEventListener('load', (event) => {
-  updateItemsLeftCount();
-});
+window.addEventListener('load', () => updateItemsLeftCount());
 
-todoInputBox.addEventListener('keypress', (event) => {
+todoInputBox.addEventListener('keypress', event => {
   if (event.key === 'Enter' &&  todoInputBox.value !== '') {
     // Capture user todo input
     todoInput = todoInputBox.value;
@@ -56,7 +54,7 @@ todoInputBox.addEventListener('keypress', (event) => {
 
     // Only add once, an event listener to todoListContainer on first todo item
     if (todoListContainer.childElementCount === 1) {
-      todoListContainer.addEventListener('click', (event) => {
+      todoListContainer.addEventListener('click', event => {
         if (event.target.classList.contains('app__input-ring')) {
           event.target.classList.toggle('completed');
           const todoItemTextWrapper = event.target.parentNode.querySelector('.app__todo-item');
