@@ -67,3 +67,35 @@ todoInputBox.addEventListener('keypress', event => {
     };
   };
 });
+
+// Menu items on mobile view
+const mobileAllMenuItem = document.querySelector('.app__menu--secondary .app__all-list');
+const mobileActiveMenuItem = document.querySelector('.app__menu--secondary .app__active');
+const mobileCompletedMenuItem = document.querySelector('.app__menu--secondary .app__completed');
+const menuSecondaryWrapper = document.querySelector(".app__menu--secondary");
+
+const getSiblings = elem => {
+
+  const siblings = [];
+  let sibling = elem.parentNode.firstChild;
+
+  while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== elem) {
+      siblings.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+  }
+
+  return siblings;
+};
+
+menuSecondaryWrapper.addEventListener('click', event => {
+
+  if (
+    event.target === mobileAllMenuItem ||
+    event.target === mobileActiveMenuItem ||
+    event.target === mobileCompletedMenuItem ||
+  ) {
+
+  }
+});
