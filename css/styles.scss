@@ -170,6 +170,14 @@ input:focus {
     border-radius: 8px 8px 0 0;
   }
 
+  &__list-item-wrapper.show-item {
+    display: flex;
+  }
+
+  &__list-item-wrapper.hide-item {
+    display: none;
+  }
+
   &__complete-toggler.completed,
   &__complete-toggler.completed:hover {
     background-image: url('../images/icon-check.svg'), $color-check-background;
