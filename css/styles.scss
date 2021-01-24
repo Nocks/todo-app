@@ -215,6 +215,10 @@ input:focus {
     padding: 0.8em;
     font-size: 15px;
     color: $dark-theme-dark-grayish-blue;
+
+    & .active-menu-item {
+      color: $color-bright-blue;
+    }
   }
 
   &__menu--primary {

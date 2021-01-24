@@ -168,6 +168,9 @@ input:focus {
   font-size: 15px;
   color: #777a92;
 }
+.app__menu .active-menu-item {
+  color: #3a7bfd;
+}
 .app__menu--primary {
   margin-top: 0;
   padding-left: 1.1em;

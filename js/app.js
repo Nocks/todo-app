@@ -68,18 +68,17 @@ todoInputBox.addEventListener('keypress', event => {
   };
 });
 
-// Menu items on mobile view
-const mobileAllMenuItem = document.querySelector('.app__menu--secondary .app__all-list');
-const mobileActiveMenuItem = document.querySelector('.app__menu--secondary .app__active');
-const mobileCompletedMenuItem = document.querySelector('.app__menu--secondary .app__completed');
-const menuSecondaryWrapper = document.querySelector(".app__menu--secondary");
-
+// Function to get the siblings of the currently clicked menu item
+// Inspired by this article: https://gomakethings.com/how-to-get-all-of-an-elements-siblings-with-vanilla-js/
 const getSiblings = elem => {
 
+  // Setup siblings array and get the first sibling
   const siblings = [];
   let sibling = elem.parentNode.firstChild;
 
+  // Loop through each sibling and push to the array
   while (sibling) {
+    // Ensure that node is of type element and not the clicked menu item
     if (sibling.nodeType === 1 && sibling !== elem) {
       siblings.push(sibling);
     }
@@ -89,13 +88,58 @@ const getSiblings = elem => {
   return siblings;
 };
 
-menuSecondaryWrapper.addEventListener('click', event => {
+// Function to make the selected menu item appear active
+const activateMenuItem = (elem) => {
 
+  // Grab the siblings of the currently selected menu item (elem)
+  const siblings = getSiblings(elem);
+
+  for (let siblingIndex in siblings) {
+    if (siblings[siblingIndex].classList.contains('active-menu-item')) {
+      siblings[siblingIndex].classList.remove('active-menu-item');
+    };
+  };
+  if (!elem.classList.contains('active-menu-item')) {
+    // Make the currently clicked menu item active
+    elem.classList.add('active-menu-item');
+  };
+};
+
+// Menu items on mobile view
+const mobileAllMenuItem = document.querySelector('.app__menu--secondary .app__all-list');
+const mobileActiveMenuItem = document.querySelector('.app__menu--secondary .app__active');
+const mobileCompletedMenuItem = document.querySelector('.app__menu--secondary .app__completed');
+
+// The wrapper for menu items on mobile view
+const menuSecondaryWrapper = document.querySelector(".app__menu--secondary");
+
+// Add an event listener to wrapper for menu items on mobile view
+menuSecondaryWrapper.addEventListener('click', event => {
   if (
     event.target === mobileAllMenuItem ||
     event.target === mobileActiveMenuItem ||
-    event.target === mobileCompletedMenuItem ||
+    event.target === mobileCompletedMenuItem
   ) {
+    activateMenuItem(event.target);
+  };
+});
 
-  }
+
+// Menu items on desktop view
+const desktopAllMenuItem = document.querySelector('.app__menu--primary .app__all-list');
+const desktopActiveMenuItem = document.querySelector('.app__menu--primary .app__active');
+const desktopCompletedMenuItem = document.querySelector('.app__menu--primary .app__completed');
+
+// The wrapper for menu items on desktop view
+const menuPrimaryWrapper = document.querySelector(".app__menu--primary");
+
+// Add an event listener to wrapper for menu items on desktop view
+menuPrimaryWrapper.addEventListener('click', event => {
+  if (
+    event.target === desktopAllMenuItem ||
+    event.target === desktopActiveMenuItem ||
+    event.target === desktopCompletedMenuItem
+  ) {
+    activateMenuItem(event.target);
+  };
 });
