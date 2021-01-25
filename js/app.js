@@ -8,7 +8,7 @@ let prepareUserInput = () => {
   listItemWrapper.classList.add('app__list-item-wrapper', 'active-todo', 'show-item');
   listItemWrapper.innerHTML = `<span class="app__complete-toggler app__input-ring"></span>`;
   listItemWrapper.innerHTML += `<span class="app__todo-item"></span>`;
-  listItemWrapper.innerHTML += `<span class="app__delete-item"><img src="images/icon-cross.svg" alt="delete entry item"></span>`;
+  listItemWrapper.innerHTML += `<span class="app__delete-item"><img src="images/icon-cross.svg" class="app__delete-img" alt="delete entry item"></span>`;
   // Grab todo span object
   const todoItemSpan = listItemWrapper.querySelector('.app__todo-item');
   // Inject todo input into listItemWrapper HTML
@@ -55,12 +55,21 @@ todoInputBox.addEventListener('keypress', event => {
     // Only add once, an event listener to todoListContainer on first todo item
     if (todoListContainer.childElementCount === 1) {
       todoListContainer.addEventListener('click', event => {
+        // Check if click was the todo complete toggle button
         if (event.target.classList.contains('app__input-ring')) {
           event.target.classList.toggle('completed');
           const todoItemTextWrapper = event.target.parentNode.querySelector('.app__todo-item');
           todoItemTextWrapper.classList.toggle('completed');
           event.target.parentNode.classList.toggle('active-todo');
           event.target.parentNode.classList.toggle('completed-todo');
+          // Update the UI of the items left
+          updateItemsLeftCount();
+        };
+        // Check if click was the delete button - on mobile view
+        if (event.target.classList.contains('app__delete-img')) {
+          // Delete the todo whose delete button was clicked on
+          todoListContainer.removeChild(event.target.parentNode.parentNode);
+          // Update the UI of the items left
           updateItemsLeftCount();
         };
       });
