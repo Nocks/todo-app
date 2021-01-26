@@ -77,6 +77,18 @@ todoInputBox.addEventListener('keypress', event => {
   };
 });
 
+
+const clearCompletedBtn = document.querySelector('.app__clear-completed');
+
+clearCompletedBtn.addEventListener('click', event => {
+  // if (todoListContainer.childElementCount === 1) {
+  //
+  // }
+  const completedTodoItems = document.querySelectorAll('.completed-todo');
+  console.log(completedTodoItems);
+});
+
+
 // Function to get the siblings of the currently clicked menu item
 // Inspired by this article: https://gomakethings.com/how-to-get-all-of-an-elements-siblings-with-vanilla-js/
 const getSiblings = elem => {
