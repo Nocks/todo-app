@@ -88,6 +88,7 @@ input:focus {
   position: relative;
   top: -190px;
   padding: 1em;
+  min-height: 60vh;
 }
 
 .app {
@@ -305,13 +306,13 @@ footer {
   }
 
   .attribution, .attribution a {
-    // color: $color-very-dark-grayish-blue;
+    color: $dark-theme-dark-grayish-blue;
   }
 
   .attribution a:hover,
   .attribution a:focus,
   .attribution a:active {
-    // color: $color-very-dark-blackish-blue;
+    color: $dark-theme-dark-grayish-blue;
   }
 
   .attribution span {
@@ -335,6 +336,9 @@ footer {
       }
   }
   &__menu--secondary {
+    display: none;
+  }
+  &__delete-item {
     display: none;
   }
 }

@@ -62,6 +62,7 @@ input:focus {
   position: relative;
   top: -190px;
   padding: 1em;
+  min-height: 60vh;
 }
 
 .app__header {
@@ -232,6 +233,14 @@ footer .attribution {
   text-align: center;
   padding: 0.8em;
 }
+footer .attribution, footer .attribution a {
+  color: #777a92;
+}
+footer .attribution a:hover,
+footer .attribution a:focus,
+footer .attribution a:active {
+  color: #777a92;
+}
 footer .attribution span {
   display: block;
 }
@@ -247,6 +256,9 @@ footer .attribution span + span {
     display: block;
   }
   .app__menu--secondary {
+    display: none;
+  }
+  .app__delete-item {
     display: none;
   }
 }
