@@ -78,14 +78,21 @@ todoInputBox.addEventListener('keypress', event => {
 });
 
 
+// Grab the 'clear completed' button
 const clearCompletedBtn = document.querySelector('.app__clear-completed');
-
+// Add an event listener to the 'clear completed' button
 clearCompletedBtn.addEventListener('click', event => {
-  // if (todoListContainer.childElementCount === 1) {
-  //
-  // }
+  // Grab all todo items that have been checked as completed
   const completedTodoItems = document.querySelectorAll('.completed-todo');
-  console.log(completedTodoItems);
+  // Check and see if there's one or more completed items
+  // before deleting.
+  if (completedTodoItems.length >= 1) {
+    Array.from(completedTodoItems).forEach(completedTodoItem => {
+      todoListContainer.removeChild(completedTodoItem);
+    });
+    // Update the UI of the items left
+    updateItemsLeftCount();
+  };
 });
 
 
