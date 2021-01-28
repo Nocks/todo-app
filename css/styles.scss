@@ -330,16 +330,33 @@ footer {
     width: 50%;
 
     &__menu--primary {
-
       & .app__menu__middle-wraper {
         display: block;
       }
-  }
-  &__menu--secondary {
-    display: none;
-  }
-  &__delete-item {
-    display: none;
+    }
+    &__menu--secondary {
+      display: none;
+    }
+    &__delete-item {
+      display: none;
+    }
   }
 }
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .header {
+    background-image: url('../images/bg-mobile-dark.jpg');
+    height: 45vh;
+  }
+  .header.light-theme {
+    background-image: url('../images/bg-mobile-light.jpg');
+  }
+
 }

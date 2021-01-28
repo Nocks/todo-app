@@ -38,6 +38,23 @@ let updateItemsLeftCount = () => {
 
 window.addEventListener('load', () => updateItemsLeftCount());
 
+// Grab and add event listener to theme changer
+document.querySelector('.app__theme-changer-img').addEventListener('click', () => {
+
+  // Grab header section of app
+  const header = document.querySelector('.header');
+
+  // Toggle theme changer icons after 2 secs on click
+  setTimeout(() => {
+    header.classList.toggle('light-theme');
+    if (header.classList.contains('light-theme')) {
+      document.querySelector('.app__theme-changer-img').src = "images/icon-moon.svg";
+    } else {
+      document.querySelector('.app__theme-changer-img').src = "images/icon-sun.svg";
+    };
+  }, 2000);
+});
+
 todoInputBox.addEventListener('keypress', event => {
   if (event.key === 'Enter' &&  todoInputBox.value !== '') {
     // Capture user todo input
