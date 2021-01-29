@@ -295,6 +295,40 @@ input:focus {
   }
 }
 
+body.light-theme {
+
+  background-color: $light-theme-very-light-grayish-blue;
+
+  .header {
+    background-image: url('../images/bg-desktop-light.jpg');
+  }
+
+  .app {
+
+    &__input-wrapper {
+      background-color: $light-theme-very-light-gray;
+    }
+
+    &__input-box {
+      background-color: $light-theme-very-light-gray;
+      color: $dark-theme-very-dark-grayish-blue;
+    }
+
+    &__input-ring {
+      border-color: $light-theme-light-grayish-blue;
+    }
+
+    &__list-item-wrapper {
+      background-color: $light-theme-very-light-gray;
+      border-bottom-color: $light-theme-light-grayish-blue;
+    }
+
+    &__todo-item {
+      color: $dark-theme-very-dark-grayish-blue;
+    }
+  }
+}
+
 footer {
   margin-top: 1.5em;
   margin-bottom: 10em;

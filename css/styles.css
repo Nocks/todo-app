@@ -224,6 +224,30 @@ input:focus {
   color: #3a7bfd;
 }
 
+body.light-theme {
+  background-color: #e4e5f1;
+}
+body.light-theme .header {
+  background-image: url("../images/bg-desktop-light.jpg");
+}
+body.light-theme .app__input-wrapper {
+  background-color: #fafafa;
+}
+body.light-theme .app__input-box {
+  background-color: #fafafa;
+  color: #393a4c;
+}
+body.light-theme .app__input-ring {
+  border-color: #d2d3db;
+}
+body.light-theme .app__list-item-wrapper {
+  background-color: #fafafa;
+  border-bottom-color: #d2d3db;
+}
+body.light-theme .app__todo-item {
+  color: #393a4c;
+}
+
 footer {
   margin-top: 1.5em;
   margin-bottom: 10em;
