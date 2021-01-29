@@ -44,13 +44,20 @@ document.querySelector('.app__theme-changer-img').addEventListener('click', () =
   // Grab header section of app
   const header = document.querySelector('.header');
 
-  // Toggle theme changer icons after 2 secs on click
+  // Grab the container of the app
+  const appContainer = document.querySelector('.app');
+
   setTimeout(() => {
+    // Toggle theme changer icons after 2 secs on click
     header.classList.toggle('light-theme');
     if (header.classList.contains('light-theme')) {
       document.querySelector('.app__theme-changer-img').src = "images/icon-moon.svg";
+      // Toggle 'light-theme' on the class of the app container
+      appContainer.classList.toggle('light-theme');
     } else {
       document.querySelector('.app__theme-changer-img').src = "images/icon-sun.svg";
+      // Toggle 'light-theme' on the class of the app container
+      appContainer.classList.toggle('light-theme');
     };
   }, 2000);
 });
