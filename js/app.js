@@ -51,7 +51,7 @@ document.querySelector('.app__theme-changer-img').addEventListener('click', () =
   const body = document.querySelector('body');
 
   setTimeout(() => {
-    // Toggle theme changer icons after 2 secs on click
+    // Toggle theme changer icons after half a sec on click
     header.classList.toggle('light-theme');
     if (header.classList.contains('light-theme')) {
       document.querySelector('.app__theme-changer-img').src = "images/icon-moon.svg";
@@ -66,7 +66,7 @@ document.querySelector('.app__theme-changer-img').addEventListener('click', () =
       // Toggle 'light-theme' on the class of the body
       body.classList.toggle('light-theme');
     };
-  }, 2000);
+  }, 500);
 });
 
 todoInputBox.addEventListener('keypress', event => {
