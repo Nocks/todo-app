@@ -180,7 +180,9 @@ input:focus {
   }
 
   &__complete-toggler.completed,
-  &__complete-toggler.completed:hover {
+  &__complete-toggler.completed:hover,
+  body.light-theme &__complete-toggler.completed,
+  body.light-theme &__complete-toggler.completed:hover {
     background-image: url('../images/icon-check.svg'), $color-check-background;
     background-repeat: no-repeat;
     background-position: center;
@@ -311,7 +313,13 @@ body.light-theme {
 
     &__input-box {
       background-color: $light-theme-very-light-gray;
-      color: $dark-theme-very-dark-grayish-blue;
+      color: $light-theme-very-dark-grayish-blue;
+    }
+
+    &__main-wrapper {
+      -webkit-box-shadow: 1px 10px 15px 3px rgba(228, 229, 241,1);
+      -moz-box-shadow: 1px 10px 15px 3px rgba(228, 229, 241,1);
+      box-shadow: 1px 10px 15px 3px rgba(228, 229, 241,1);
     }
 
     &__input-ring {
@@ -323,8 +331,38 @@ body.light-theme {
       border-bottom-color: $light-theme-light-grayish-blue;
     }
 
+    &__complete-toggler:hover {
+      cursor: pointer;
+      background:
+       linear-gradient(#fafafa, #fafafa) padding-box,
+       linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+      border: 1px solid transparent;
+    }
+
     &__todo-item {
-      color: $dark-theme-very-dark-grayish-blue;
+      color: $light-theme-very-dark-grayish-blue;
+    }
+
+    &__todo-item.completed {
+      color: $light-theme-light-grayish-blue;
+    }
+
+    &__menu {
+      background-color: $light-theme-very-light-gray;
+      color: $light-theme-dark-grayish-blue;
+    }
+
+    & .app__all-list:hover,
+    & .app__active:hover,
+    & .app__completed:hover,
+    & .app__clear-completed:hover {
+      color: $light-theme-very-dark-grayish-blue;
+    }
+
+    &__menu--secondary  {
+      -webkit-box-shadow: 1px 10px 15px 3px rgba(228, 229, 241,1);
+      -moz-box-shadow: 1px 10px 15px 3px rgba(228, 229, 241,1);
+      box-shadow: 1px 10px 15px 3px rgba(228, 229, 241,1);
     }
   }
 }
