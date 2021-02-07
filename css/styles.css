@@ -1,11 +1,19 @@
+/* Primary colours */
+/* Light Theme Colours */
+/* Dark Theme */
+/* Typography */
+/* Body Copy */
+/* 18px */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 ::before,
 ::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html,
@@ -55,9 +63,16 @@ input:focus {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 0;
   position: relative;
   top: -190px;
@@ -66,40 +81,58 @@ input:focus {
 }
 
 .app__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .app__name {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: white;
 }
+
 .app__theme-changer {
   margin-top: 0;
 }
+
 .app__theme-changer:hover {
   cursor: pointer;
 }
+
 .app__input-wrapper {
   background-color: #25273c;
   padding: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   border-radius: 8px;
 }
+
 .app__input-wrapper .app__input-box {
   width: 90%;
 }
+
 .app__main-wrapper {
   border-radius: 8px;
   margin-top: 1em;
   -webkit-box-shadow: 1px 10px 15px 3px #161722;
-  -moz-box-shadow: 1px 10px 15px 3px #161722;
   box-shadow: 1px 10px 15px 3px #161722;
 }
+
 .app__input-ring {
   display: block;
   height: 25px;
@@ -108,6 +141,7 @@ input:focus {
   border-radius: 50%;
   margin-right: 20px;
 }
+
 .app__input-box {
   margin-top: 0;
   background-color: #25273c;
@@ -116,160 +150,240 @@ input:focus {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
 }
+
+.app__input-box::-webkit-input-placeholder {
+  color: #777a92;
+}
+
+.app__input-box:-ms-input-placeholder {
+  color: #777a92;
+}
+
+.app__input-box::-ms-input-placeholder {
+  color: #777a92;
+}
+
 .app__input-box::placeholder {
   color: #777a92;
 }
+
 .app__list-item-wrapper {
   background-color: #25273c;
   padding: 0.8em;
   margin: 0;
   border-bottom: 1px solid #393a4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 .app__list-item-wrapper:first-child {
   border-radius: 8px 8px 0 0;
 }
+
 .app__list-item-wrapper.show-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .app__list-item-wrapper.hide-item {
   display: none;
 }
-.app__complete-toggler.completed, .app__complete-toggler.completed:hover, body.light-theme .app__complete-toggler.completed, body.light-theme .app__complete-toggler.completed:hover {
+
+.app__complete-toggler.completed, .app__complete-toggler.completed:hover,
+body.light-theme .app__complete-toggler.completed,
+body.light-theme .app__complete-toggler.completed:hover {
+  background-image: url("../images/icon-check.svg"), -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
   background-image: url("../images/icon-check.svg"), linear-gradient(#57ddff, #c058f3);
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .app__complete-toggler:hover {
   cursor: pointer;
   /* You cannot use border-radius with gradient
-  The following solution was achieved from the link below:
-  https://stackoverflow.com/questions/51496204/border-gradient-with-border-radius */
+    The following solution was achieved from the link below:
+    https://stackoverflow.com/questions/51496204/border-gradient-with-border-radius */
+  background: -webkit-gradient(linear, left top, left bottom, from(#25273c), to(#25273c)) padding-box, -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3)) border-box;
   background: linear-gradient(#25273c, #25273c) padding-box, linear-gradient(#57ddff, #c058f3) border-box;
   border: 1px solid transparent;
 }
+
 .app__todo-item {
   margin-top: 0;
   color: #cacde8;
   cursor: pointer;
 }
+
 .app__todo-item.completed {
   text-decoration: line-through;
   color: #777a92;
 }
+
 .app__delete-item {
   height: 26px;
   width: 26px;
   margin-top: 0;
   position: absolute;
   right: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .app__menu {
   background-color: #25273c;
   padding: 0.8em;
   font-size: 15px;
   color: #777a92;
 }
+
 .app__menu .active-menu-item {
   color: #3a7bfd;
 }
+
 .app__menu--primary {
   margin-top: 0;
   padding-left: 1.1em;
   padding-right: 1.1em;
   border-radius: 0 0 8px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .app__menu--primary .app__menu__middle-wraper {
   margin-top: 0;
   display: none;
 }
-.app__menu--primary .app__menu__middle-wraper .app__all-list, .app__menu--primary .app__menu__middle-wraper .app__active, .app__menu--primary .app__menu__middle-wraper .app__completed {
+
+.app__menu--primary .app__menu__middle-wraper .app__all-list,
+.app__menu--primary .app__menu__middle-wraper .app__active,
+.app__menu--primary .app__menu__middle-wraper .app__completed {
   margin-top: 0;
 }
+
 .app__menu--primary .app__menu__middle-wraper .app__active, .app__menu--primary .app__menu__middle-wraper .app__completed {
   margin-top: 0;
   margin-left: 1em;
 }
-.app__menu--primary .app__all-list:hover, .app__menu--primary .app__active:hover, .app__menu--primary .app__completed:hover, .app__menu--primary .app__clear-completed:hover {
+
+.app__menu--primary .app__all-list:hover,
+.app__menu--primary .app__active:hover,
+.app__menu--primary .app__completed:hover,
+.app__menu--primary .app__clear-completed:hover {
   cursor: pointer;
   font-weight: bold;
   color: #e4e5f1;
 }
+
 .app__menu--primary .app__clear-completed {
   margin-top: 0;
 }
+
 .app__menu--secondary {
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-shadow: 1px 10px 15px 3px #161722;
-  -moz-box-shadow: 1px 10px 15px 3px #161722;
   box-shadow: 1px 10px 15px 3px #161722;
 }
+
 .app__menu--secondary .app__active, .app__menu--secondary .app__completed {
   margin-top: 0;
   margin-left: 1em;
 }
-.app__menu--secondary .app__all-list, .app__menu--secondary .app__active, .app__menu--secondary .app__completed {
+
+.app__menu--secondary .app__all-list,
+.app__menu--secondary .app__active,
+.app__menu--secondary .app__completed {
   font-weight: 700;
 }
-.app__menu--secondary .app__all-list.active, .app__menu--secondary .app__active.active, .app__menu--secondary .app__completed.active {
+
+.app__menu--secondary .app__all-list.active,
+.app__menu--secondary .app__active.active,
+.app__menu--secondary .app__completed.active {
   color: #3a7bfd;
 }
 
 body.light-theme {
   background-color: #e4e5f1;
 }
+
 body.light-theme .header {
   background-image: url("../images/bg-desktop-light.jpg");
 }
+
 body.light-theme .app__input-wrapper {
   background-color: #fafafa;
 }
+
 body.light-theme .app__input-box {
   background-color: #fafafa;
   color: #484b6a;
 }
+
 body.light-theme .app__main-wrapper {
   -webkit-box-shadow: 1px 10px 15px 3px #e4e5f1;
-  -moz-box-shadow: 1px 10px 15px 3px #e4e5f1;
   box-shadow: 1px 10px 15px 3px #e4e5f1;
 }
+
 body.light-theme .app__input-ring {
   border-color: #d2d3db;
 }
+
 body.light-theme .app__list-item-wrapper {
   background-color: #fafafa;
   border-bottom-color: #d2d3db;
 }
+
 body.light-theme .app__complete-toggler:hover {
   cursor: pointer;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#fafafa)) padding-box, -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3)) border-box;
   background: linear-gradient(#fafafa, #fafafa) padding-box, linear-gradient(#57ddff, #c058f3) border-box;
   border: 1px solid transparent;
 }
+
 body.light-theme .app__todo-item {
   color: #484b6a;
 }
+
 body.light-theme .app__todo-item.completed {
   color: #d2d3db;
 }
+
 body.light-theme .app__menu {
   background-color: #fafafa;
   color: #9394a5;
 }
-body.light-theme .app .app__all-list:hover, body.light-theme .app .app__active:hover, body.light-theme .app .app__completed:hover, body.light-theme .app .app__clear-completed:hover {
+
+body.light-theme .app .app__all-list:hover,
+body.light-theme .app .app__active:hover,
+body.light-theme .app .app__completed:hover,
+body.light-theme .app .app__clear-completed:hover {
   color: #484b6a;
 }
+
 body.light-theme .app__menu--secondary {
   -webkit-box-shadow: 1px 10px 15px 3px #e4e5f1;
-  -moz-box-shadow: 1px 10px 15px 3px #e4e5f1;
   box-shadow: 1px 10px 15px 3px #e4e5f1;
 }
 
@@ -277,26 +391,32 @@ footer {
   margin-top: 1.5em;
   margin-bottom: 10em;
 }
+
 footer .attribution {
   font-size: 11px;
   text-align: center;
   padding: 0.8em;
 }
+
 footer .attribution, footer .attribution a {
   color: #777a92;
 }
+
 footer .attribution a:hover,
 footer .attribution a:focus,
 footer .attribution a:active {
   color: #777a92;
 }
+
 footer .attribution span {
   display: block;
 }
+
 footer .attribution span + span {
   margin-top: 0;
 }
 
+/* Media query for screens above 800px  */
 @media (min-width: 800px) {
   .app {
     width: 50%;
@@ -311,6 +431,7 @@ footer .attribution span + span {
     display: none;
   }
 }
+
 /*
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
@@ -320,10 +441,8 @@ footer .attribution span + span {
     background-image: url("../images/bg-mobile-dark.jpg");
     height: 45vh;
   }
-
   .header.light-theme {
     background-image: url("../images/bg-mobile-light.jpg");
   }
 }
-
 /*# sourceMappingURL=styles.css.map */

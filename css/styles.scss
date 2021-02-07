@@ -1,15 +1,15 @@
-// Primary colours
+/* Primary colours */
 $color-bright-blue: hsl(220, 98%, 61%);
 $color-check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
-// Light Theme Colours
+/* Light Theme Colours */
 $light-theme-very-light-gray: hsl(0, 0%, 98%);
 $light-theme-very-light-grayish-blue: hsl(236, 33%, 92%);
 $light-theme-light-grayish-blue: hsl(233, 11%, 84%);
 $light-theme-dark-grayish-blue: hsl(236, 9%, 61%);
 $light-theme-very-dark-grayish-blue: hsl(235, 19%, 35%);
 
-// Dark Theme
+/* Dark Theme */ 
 $dark-theme-very-dark-blue: hsl(235, 21%, 11%);
 $dark-theme-very-dark-desaturated-blue: hsl(235, 24%, 19%);
 $dark-theme-light-grayish-blue: hsl(234, 39%, 85%);
@@ -18,11 +18,11 @@ $dark-theme-dark-grayish-blue: hsl(234, 11%, 52%);
 $dark-theme-very-dark-grayish-blue: hsl(233, 14%, 35%);
 $dark-theme-very-dark-grayish-blue: hsl(237, 14%, 26%);
 
-// Typography
+/* Typography */
 $default-font-stack: 'Josefin Sans', sans-serif;
 
-// Body Copy
-$body-font-size: 1.125em; // 18px
+/* Body Copy */
+$body-font-size: 1.125em; /* 18px */
 
 html {
   box-sizing: border-box;
@@ -396,7 +396,7 @@ footer {
   }
 }
 
-// Temp media query
+/* Media query for screens above 800px  */
 @media (min-width: 800px) {
   .app {
     width: 50%;
